@@ -1,0 +1,12 @@
+name: SimpleWarp
+main: fr.aarize.SimpleWarp.Main
+version: 1.0
+api-version: 1.13
+commands:
+  warp:
+    description: Manage and use warps (set, list, <name>)
+    usage: /warp set <name> | /warp list | /warp <name>
+permissions:
+  simplewarp.set:
+    description: Permission to set warps
+    default: op

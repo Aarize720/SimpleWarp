@@ -2,19 +2,24 @@ plugins {
     id 'java'
 }
 
-group = 'org.example'
-version = '1.0-SNAPSHOT'
+group 'fr.aarize'
+version '1.0'
+
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    compileOnly 'org.spigotmc:spigot-api:1.20.2-R0.1-SNAPSHOT'
 }
 
-test {
-    useJUnitPlatform()
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'fr.aarize.SimpleWarp.Main'
+        )
+    }
 }
